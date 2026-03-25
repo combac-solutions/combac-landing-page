@@ -54,8 +54,7 @@ function Navbar() {
         />
         <div className="navbar-start">
           <a href="/" className="flex items-center gap-2">
-            <img className="h-10" src={logo} alt="logo" />
-            <span className="app-name combac-glow">{name}</span>
+            <span className="app-name combac-glow font-bold">{name}</span>
           </a>
         </div>
         <div className="navbar-end md:hidden">

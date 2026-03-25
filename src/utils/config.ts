@@ -8,7 +8,7 @@ const templateConfig: TemplateConfig = {
       "Earn points, unlock rewards, and discover loyalty programs at all your favorite local businesses — all in one app.",
   },
   backgroundGrid: false,
-  logo: "/logo.svg",
+  logo: "./logo.svg",
   theme: "combac",
   // Forces Combac dark theme always
   forceTheme: true,
@@ -27,10 +27,10 @@ const templateConfig: TemplateConfig = {
       twitter: "https://x.com",
     },
     links: [
-      { href: "/#features", title: "Features" },
-      { href: "/#how-it-works", title: "How it works" },
-      { href: "/#pricing", title: "For Businesses" },
-      { href: "/#faq", title: "FAQ" },
+      { href: "./#features", title: "Features" },
+      { href: "./#how-it-works", title: "How it works" },
+      { href: "./#pricing", title: "For Businesses" },
+      { href: "./#faq", title: "FAQ" },
     ],
   },
   topNavbar: {
@@ -39,10 +39,10 @@ const templateConfig: TemplateConfig = {
     hideAppStore: false,
     hideGooglePlay: false,
     links: [
-      { href: "/#features", title: "Features" },
-      { href: "/#how-it-works", title: "How it works" },
-      { href: "/#pricing", title: "For Businesses" },
-      { href: "/#faq", title: "FAQ" },
+      { href: "./#features", title: "Features" },
+      { href: "./#how-it-works", title: "How it works" },
+      { href: "./#pricing", title: "For Businesses" },
+      { href: "./#faq", title: "FAQ" },
     ],
   },
   appBanner: {
@@ -51,9 +51,9 @@ const templateConfig: TemplateConfig = {
     subtitle:
       "Download Combac and unlock loyalty programs at hundreds of local businesses — coffee shops, gyms, restaurants, salons, and more. Your wallet will thank you.",
     screenshots: [
-      "/screenshots/1.webp",
-      "/screenshots/2.webp",
-      "/screenshots/3.webp",
+      "./screenshots/1.webp",
+      "./screenshots/2.webp",
+      "./screenshots/3.webp",
     ],
   },
   home: {
@@ -97,10 +97,10 @@ const templateConfig: TemplateConfig = {
     partners: {
       title: "Trusted by businesses across categories",
       logos: [
-        "/misc/companies/apple.svg",
-        "/misc/companies/aws.svg",
-        "/misc/companies/google.svg",
-        "/misc/companies/tumblr.svg",
+        "./misc/companies/apple.svg",
+        "./misc/companies/aws.svg",
+        "./misc/companies/google.svg",
+        "./misc/companies/tumblr.svg",
       ],
     },
     howItWorks: {
@@ -113,25 +113,25 @@ const templateConfig: TemplateConfig = {
           title: "Download Combac",
           subtitle:
             "Get the Combac app on iOS or Android for free. Sign up in under 60 seconds and your loyalty journey begins immediately.",
-          image: "/screenshots/1.webp",
+          image: "./screenshots/1.webp",
         },
         {
           title: "Discover Local Businesses",
           subtitle:
             "Browse hundreds of participating businesses near you — cafés, gyms, salons, restaurants and more — all waiting to reward your loyalty.",
-          image: "/screenshots/3.webp",
+          image: "./screenshots/3.webp",
         },
         {
           title: "Earn Points Every Visit",
           subtitle:
             "Scan the business QR code or let them scan yours at checkout. Points land in your wallet instantly after every visit.",
-          image: "/screenshots/2.webp",
+          image: "./screenshots/2.webp",
         },
         {
           title: "Redeem Your Rewards",
           subtitle:
             "Exchange your accumulated points for free drinks, discounts, exclusive products, or special experiences — chosen by each business just for you.",
-          image: "/screenshots/1.webp",
+          image: "./screenshots/1.webp",
         },
       ],
     },
@@ -145,25 +145,25 @@ const templateConfig: TemplateConfig = {
           title: "Multi-Business Loyalty",
           subtitle:
             "Join loyalty programs from coffee shops, gyms, restaurants, salons and any participating business — all managed from one unified app, no paper cards needed.",
-          icon: "/3D/bookmark-fav-front-color.webp",
+          icon: "./3D/bookmark-fav-front-color.webp",
         },
         {
           title: "Instant Rewards",
           subtitle:
             "Points land in your wallet the moment you scan. No delays, no waiting. Redeem rewards immediately when you have enough balance at any participating business.",
-          icon: "/3D/gift-front-color.webp",
+          icon: "./3D/gift-front-color.webp",
         },
         {
           title: "Track Your Progress",
           subtitle:
             "Watch your loyalty stamps fill up in real time. See exactly how close you are to your next reward with beautiful progress cards for each business.",
-          icon: "/3D/chart-front-color.webp",
+          icon: "./3D/chart-front-color.webp",
         },
         {
           title: "Exclusive Offers",
           subtitle:
             "Businesses on Combac run special members-only promotions, double-point events, and surprise bonuses accessible only through the app.",
-          icon: "/3D/crown-front-color.webp",
+          icon: "./3D/crown-front-color.webp",
         },
       ],
     },
@@ -209,9 +209,9 @@ const templateConfig: TemplateConfig = {
       subtitle:
         "Combac is the all-in-one loyalty app that lets you earn points, track rewards, and redeem perks at every local business you visit — coffee shops, gyms, restaurants, salons and more.",
       screenshots: [
-        "/screenshots/1.webp",
-        "/screenshots/2.webp",
-        "/screenshots/3.webp",
+        "./screenshots/1.webp",
+        "./screenshots/2.webp",
+        "./screenshots/3.webp",
       ],
       rewards: ["#1 Loyalty App", "Top Rated 2025"],
       usersDescription: "5,000+ active loyalty members",

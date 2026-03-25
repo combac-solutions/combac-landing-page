@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { ConfigContext } from "../../../../utils/configContext";
+import { getAssetPath } from "../../../../utils/assets";
 
 function Features() {
   const {
@@ -63,7 +64,7 @@ function Features() {
               />
               <figure className="py-4">
                 <img
-                  src={feat.icon}
+                  src={getAssetPath(feat.icon)}
                   alt="feature icon"
                   className="w-40 transition-transform group-hover:scale-90"
                 />

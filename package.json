@@ -2,6 +2,7 @@
   "name": "mobile-app-template",
   "version": "0.1.0",
   "license": "MIT",
+  "homepage": "https://MedAmineOuertani.github.io/mobile-app-landing-template",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -9,7 +10,9 @@
     "build": "astro build",
     "build:prod": "NODE_ENV=production astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "predeploy": "pnpm build",
+    "deploy": "gh-pages -d dist -t"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -30,6 +33,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "daisyui": "^4.12.8",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.14.0",
     "sass": "^1.77.6",

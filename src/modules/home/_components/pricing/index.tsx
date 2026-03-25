@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { ConfigContext } from "../../../../utils/configContext";
+import { getAssetPath } from "../../../../utils/assets";
 
 const planImages = [
   "/misc/wallet-front-color.webp",
@@ -73,7 +74,7 @@ function Pricing() {
                   )}
                   <div className={clsx("h-32 w-[40%] p-4", planBGs[index])}>
                     <img
-                      src={planImages[index]}
+                      src={getAssetPath(planImages[index])}
                       alt="pricing plan"
                       className="m-0 h-full w-full object-contain"
                     />
@@ -97,7 +98,7 @@ function Pricing() {
                 {pricing.actionText && (
                   <div className="w-full">
                     <a
-                      href="/app"
+                      href={getAssetPath("/app")}
                       className="btn btn-primary btn-square no-animation rounded-none w-full text-lg h-auto py-4"
                     >
                       {pricing.actionText}

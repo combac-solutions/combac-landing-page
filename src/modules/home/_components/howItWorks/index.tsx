@@ -6,6 +6,7 @@ import { ConfigContext } from "../../../../utils/configContext";
 import SwirlArrowBottomLeft from "./svg/swirlArrowBottomLeft";
 import SwirlArrowBottomRight from "./svg/swirlArrowBottomRight";
 import SwirlArrowBottom from "./svg/swirlArrowBottom";
+import { getAssetPath } from "../../../../utils/assets";
 
 function HowItWorks() {
   const {
@@ -105,7 +106,7 @@ function HowItWorks() {
             >
               <img
                 className="rounded-3xl lg:w-[75%]"
-                src={step.image}
+                src={getAssetPath(step.image)}
                 alt={`step ${index}`}
               />
             </motion.div>

@@ -4,6 +4,7 @@ import InstagramLogo from "./svgs/instagram";
 import FacebookLogo from "./svgs/facebook";
 import TwitterLogo from "./svgs/twitter";
 import { motion } from "framer-motion";
+import { getAssetPath } from "../../utils/assets";
 
 function Footer() {
   const {
@@ -29,7 +30,7 @@ function Footer() {
               }}
               transition={{ delay: index * 0.25 }}
               className="text-xl font-bold block uppercase whitespace-nowrap link no-underline text-primary hover:text-primary/50 md:text-4xl"
-              href={href}
+              href={getAssetPath(href)}
             >
               {title}
             </motion.a>
@@ -89,7 +90,7 @@ function Footer() {
                 }}
                 transition={{ delay: 0.25 }}
                 className="font-bold text-primary hover:text-primary/50 lg:whitespace-nowrap"
-                href="/terms-and-conditions"
+                href={getAssetPath("/terms-and-conditions")}
               >
                 Terms & conditions
               </motion.a>
@@ -102,7 +103,7 @@ function Footer() {
                 }}
                 transition={{ delay: 0.5 }}
                 className="font-bold text-primary hover:text-primary/50 lg:whitespace-nowrap"
-                href="/privacy-policy"
+                href={getAssetPath("/privacy-policy")}
               >
                 Privacy policy
               </motion.a>
@@ -115,7 +116,7 @@ function Footer() {
                 }}
                 transition={{ delay: 0.75 }}
                 className="font-bold text-primary hover:text-primary/50 lg:whitespace-nowrap"
-                href="/cookies-policy"
+                href={getAssetPath("/cookies-policy")}
               >
                 Cookies policy
               </motion.a>

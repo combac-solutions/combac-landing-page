@@ -4,6 +4,7 @@ import Spill from "./svgs/spill";
 import IphoneFrame from "../../components/iphoneFrame";
 import { motion } from "framer-motion";
 import clsx from "clsx";
+import { getAssetPath } from "../../utils/assets";
 
 function AppBanner() {
   const { googlePlayLink, appStoreLink, appBanner } =
@@ -65,7 +66,7 @@ function AppBanner() {
                     <img
                       className="h-14"
                       alt="google play logo"
-                      src="/stores/google-play.svg"
+                      src={getAssetPath("/stores/google-play.svg")}
                     />
                   </a>
                 </li>
@@ -76,7 +77,7 @@ function AppBanner() {
                     <img
                       className="h-14"
                       alt="app store logo"
-                      src="/stores/app-store.svg"
+                      src={getAssetPath("/stores/app-store.svg")}
                     />
                   </a>
                 </li>
