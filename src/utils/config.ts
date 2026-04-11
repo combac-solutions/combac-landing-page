@@ -10,7 +10,7 @@ const templateConfig: TemplateConfig = {
   backgroundGrid: false,
   logo: "./logo.svg",
   theme: "combac",
-  // Forces Combac dark theme always
+  // Forces Combac light theme always
   forceTheme: true,
   showThemeSwitch: false,
   appStoreLink: "#",
