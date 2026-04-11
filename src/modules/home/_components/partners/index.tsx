@@ -11,17 +11,22 @@ function Partners() {
   if (!partners) return null;
 
   return (
-    <section id={partners.id} className="relative p-4">
-      <div className="absolute left-0 right-0 top-0 bottom-0 bg-neutral -z-10" />
-      <div className="max-w-screen-lg mx-auto mb-12 flex flex-col items-center">
-        <h2 className="text-neutral-content text-4xl my-4 font-bold">
-          <AnimatedText text={partners.title} />
-        </h2>
+    <section id={partners.id} className="relative py-12 px-4">
+      <div className="absolute inset-0 bg-neutral/30 -z-10" />
+      <div className="max-w-screen-lg mx-auto mb-4 flex flex-col items-center">
+        <motion.h3 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 0.5, y: 0 }}
+          viewport={{ once: true }}
+          className="text-neutral-content text-sm uppercase tracking-[0.2em] font-bold mb-12"
+        >
+          {partners.title}
+        </motion.h3>
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 1, once: true, margin: "0px 0px -100px 0px" }}
-          className="mt-4 w-full grid gap-8 grid-cols-[repeat(auto-fit,minmax(100px,1fr))] justify-items-center md:gap-8"
+          viewport={{ once: true, amount: 0.2 }}
+          className="w-full flex flex-wrap justify-center items-center gap-12 md:gap-20"
         >
           {partners.logos.map((logo, index) => (
             <motion.img
@@ -29,11 +34,17 @@ function Partners() {
               src={getAssetPath(logo)}
               alt="partner logo"
               variants={{
-                hidden: { y: "-80%", opacity: 0 },
-                visible: { y: "0%", opacity: 1 },
+                hidden: { y: 20, opacity: 0, filter: "grayscale(100%)" },
+                visible: { y: 0, opacity: 0.6, filter: "grayscale(100%)" },
               }}
-              transition={{ delay: 0.25 + index * 0.25 }}
-              className="w-20 h-20"
+              whileHover={{ opacity: 1, filter: "grayscale(0%)", scale: 1.1 }}
+              transition={{ 
+                delay: index * 0.1, 
+                type: "spring", 
+                stiffness: 100,
+                duration: 0.5 
+              }}
+              className="h-8 md:h-10 w-auto object-contain transition-all duration-300"
             />
           ))}
         </motion.div>

@@ -30,6 +30,7 @@ function Header() {
                     key={index}
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 20, delay: index * 0.1 }}
                     className="flex items-center self-center h-8 md:h-12"
                   >
                     <img src={getAssetPath("/misc/wreath-left.webp")} className="h-full" />
@@ -41,9 +42,10 @@ function Header() {
                 ))}
               </div>
               <motion.h2
-                initial={{ opacity: 0, rotateZ: -10 }}
-                animate={{ opacity: 1, rotateZ: 0 }}
-                className="mt-0 mb-4 text-4xl md:text-6xl"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
+                className="mt-0 mb-4 text-4xl md:text-6xl tracking-tight"
               >
                 {header.headlineMark ? (
                   <>
@@ -63,7 +65,7 @@ function Header() {
                           width: "100%",
                           height: "100%",
                         }}
-                        transition={{ duration: 0.6, delay: 1 }}
+                        transition={{ duration: 0.8, delay: 1, ease: "circOut" }}
                         className="w-0 h-full top-0 left-0 z-[-1] absolute inline-block bg-gradient-to-r from-primary/80 to-secondary/40 rounded-lg"
                       />
                     </span>{" "}
@@ -77,22 +79,22 @@ function Header() {
                 )}
               </motion.h2>
               <motion.p
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 0.7, x: 0 }}
-                transition={{ delay: 0.5, ease: "easeInOut" }}
-                className="whitespace-pre-wrap text-left m-0 my-1 max-w-md md:text-lg md:max-w-lg"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, type: "spring", stiffness: 100, damping: 20 }}
+                className="whitespace-pre-wrap text-left m-0 my-1 max-w-md md:text-lg md:max-w-lg opacity-70"
               >
                 {header.subtitle}
               </motion.p>
               <motion.ul
-                initial={{ opacity: 0, y: "100%" }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
+                transition={{ delay: 0.6, type: "spring", stiffness: 100, damping: 20 }}
                 className="list-none flex gap-4 m-0 p-0"
               >
                 {googlePlayLink && (
                   <li className="m-0 p-0">
-                    <a href={googlePlayLink}>
+                    <a href={googlePlayLink} className="transition-transform hover:scale-105 active:scale-95">
                       <img
                         className="h-14"
                         alt="google play logo"
@@ -103,7 +105,7 @@ function Header() {
                 )}
                 {appStoreLink && (
                   <li className="m-0 p-0">
-                    <a href={appStoreLink}>
+                    <a href={appStoreLink} className="transition-transform hover:scale-105 active:scale-95">
                       <img
                         className="h-14"
                         alt="app store logo"
@@ -114,17 +116,17 @@ function Header() {
                 )}
               </motion.ul>
               {header.usersDescription && (
-                <div className="not-prose flex items-center gap-2 my-1">
+                <div className="not-prose flex items-center gap-2 my-4">
                   <ul className="avatar-group -space-x-4">
                     {Array.from(Array(5)).map((_, index) => (
                       <motion.li
                         key={index}
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: 0.3 + index * 0.2 }}
+                        initial={{ scale: 0, opacity: 0, x: -10 }}
+                        animate={{ scale: 1, opacity: 1, x: 0 }}
+                        transition={{ delay: 0.8 + index * 0.1, type: "spring" }}
                         className="avatar"
                       >
-                        <div className="w-8">
+                        <div className="w-8 border-2 border-base-100">
                           <img
                             src={getAssetPath(`/avatars/${index + 1}.webp`)}
                             alt={`app user ${index + 1}`}
@@ -134,10 +136,10 @@ function Header() {
                     ))}
                   </ul>
                   <motion.p
-                    className="text-sm"
-                    initial={{ scale: 0, opacity: 0, y: "100%" }}
-                    animate={{ scale: 1, opacity: 1, y: 0 }}
-                    transition={{ delay: 1.1 }}
+                    className="text-sm font-medium opacity-80"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1.4, type: "spring" }}
                   >
                     {header.usersDescription}
                   </motion.p>
@@ -149,17 +151,16 @@ function Header() {
             <div className="flex justify-center sticky top-28 md:top-40">
               <SVGBlob
                 scrollYProgress={scrollYProgress}
-                className="-z-10 absolute hidden w-[800px] -top-20 -right-60 md:hidden xl:block"
+                className="-z-10 absolute hidden w-[800px] -top-20 -right-60 md:hidden xl:block opacity-50"
               />
               <motion.div
-                initial={{ scale: 0.4, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
+                initial={{ scale: 0.8, opacity: 0, y: 40 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
                 transition={{
                   type: "spring",
-                  stiffness: 200,
-                  mass: 0.4,
-                  duration: 0.5,
-                  delay: 0.3,
+                  stiffness: 100,
+                  damping: 15,
+                  delay: 0.4,
                 }}
                 className="relative h-[548px] 2xs:h-[720px] sm:h-[648px] md:h-[548px] rounded-[3rem]"
               >
@@ -177,7 +178,7 @@ function Header() {
                 <img
                   src={getAssetPath("/misc/iphone-frame.webp")}
                   alt="iphone-frame"
-                  className="relative z-10 h-full"
+                  className="relative z-10 h-full pointer-events-none"
                 />
               </motion.div>
             </div>

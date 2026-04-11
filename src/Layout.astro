@@ -54,6 +54,17 @@ const { backgroundGrid, seo, logo, theme, forceTheme } =
       if (theme === "dark" && !forceTheme)
         document.documentElement.setAttribute("data-theme", theme);
     </script>
+    <script>
+      import Lenis from 'lenis'
+      const lenis = new Lenis()
+
+      function raf(time: number) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+      }
+
+      requestAnimationFrame(raf)
+    </script>
   </head>
   <body class="relative">
     {backgroundGrid && <div class="backgroundGrid" />}
