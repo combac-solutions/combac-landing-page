@@ -2,7 +2,7 @@
   "name": "mobile-app-template",
   "version": "0.1.0",
   "license": "MIT",
-  "homepage": "https://MedAmineOuertani.github.io/mobile-app-landing-template",
+  "homepage": "https://combac.app",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
