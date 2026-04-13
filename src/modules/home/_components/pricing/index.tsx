@@ -83,7 +83,7 @@ function Pricing() {
                   <h4 className="text-2xl font-bold tracking-tight mb-2">{plan.title}</h4>
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-3xl font-black">{plan.price}</span>
-                    {plan.price !== "Free" && <span className="opacity-50 text-sm">/mo</span>}
+                    {plan.price !== "Free"}
                   </div>
                 </div>
 

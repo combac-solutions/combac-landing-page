@@ -35,7 +35,6 @@ export default {
   plugins: [require("daisyui"), require("@tailwindcss/typography")],
   daisyui: {
     themes: [
-      "dark",
       {
         combac: {
           primary: "#7C3AED",
@@ -56,6 +55,7 @@ export default {
           error: "#F87171",
         },
       },
+      "dark",
       config.theme,
     ],
   },

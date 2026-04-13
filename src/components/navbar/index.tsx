@@ -58,7 +58,7 @@ function Navbar() {
           </a>
         </div>
         <div className="navbar-end md:hidden">
-          {showThemeSwitch && <ThemeSwitcher />}
+          {showThemeSwitch && <div className="mr-2"><ThemeSwitcher /></div>}
           <MenuToggle
             toggle={() => setIsMobileNavVisible((current) => !current)}
             isOpen={isMobileNavVisible}

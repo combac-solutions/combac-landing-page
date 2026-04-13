@@ -42,17 +42,9 @@ const { backgroundGrid, seo, logo, theme, forceTheme } =
     <meta property="twitter:image" content={new URL(getAssetPath(logo), Astro.url)} />
 
     <script is:inline define:vars={{ forceTheme }}>
-      function getPreferredColorScheme() {
-        if (!window.matchMedia) {
-          return;
-        }
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
-        }
-      }
-      const theme = localStorage.getItem("theme") ?? getPreferredColorScheme();
+      const theme = localStorage.getItem("theme");
       if (theme === "dark" && !forceTheme)
-        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.setAttribute("data-theme", "dark");
     </script>
     <script>
       import Lenis from 'lenis'

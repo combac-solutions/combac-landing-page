@@ -5,7 +5,7 @@ import { ConfigContext } from "../../utils/configContext";
 import type { TemplateConfig } from "../../utils/configType";
 import Header from "./_components/header";
 import Features from "./_components/features";
-import Partners from "./_components/partners";
+import Stats from "./_components/stats";
 import Faq from "./_components/faq";
 import HowItWorks from "./_components/howItWorks";
 import Pricing from "./_components/pricing";
@@ -21,7 +21,7 @@ function Home({ config }: Props) {
       <main>
         <Navbar />
         <Header />
-        <Partners />
+        <Stats />
         <Features />
         <HowItWorks />
         <Pricing />

@@ -92,6 +92,15 @@ export type TemplateConfig = {
             title: string;
             logos: string[];
         } | undefined;
+        stats?: {
+            id?: string | undefined;
+            title: string;
+            items: {
+                value: string;
+                label: string;
+                icon: string;
+            }[];
+        } | undefined;
         faq?: {
             id?: string | undefined;
             title: string;
