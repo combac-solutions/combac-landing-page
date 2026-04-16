@@ -4,10 +4,10 @@ import "@styles/styles.scss";
 import type { TemplateConfig } from "utils/configType";
 import { getAssetPath } from "utils/assets";
 
-const { backgroundGrid, seo, logo, theme, forceTheme } =
+const { backgroundGrid, seo, logo, theme, forceTheme, locale } =
   Astro.props as TemplateConfig;
 
-const lang = Astro.currentLocale || "en";
+const lang = locale || Astro.currentLocale || "en";
 ---
 
 <!doctype html>

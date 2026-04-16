@@ -4,6 +4,6 @@ export const getAssetPath = (path: string) => {
   // Remove leading dots and slashes
   const cleanPath = path.replace(/^\.?\//, "");
   
-  // Return path starting with ./ as requested
-  return `./${cleanPath}`;
+  // Return path starting with / to ensure it works in subdirectories
+  return `/${cleanPath}`;
 };
