@@ -1,5 +1,6 @@
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { ConfigContext } from "../../utils/configContext";
 
 const languages = [
   { code: "en", name: "English", flag: "🇺🇸" },
@@ -8,50 +9,43 @@ const languages = [
 ];
 
 function LanguageSelector() {
-  const [currentLang, setCurrentLang] = useState("en");
+  const { locale: currentLang = "en" } = useContext(ConfigContext)!;
 
-  useEffect(() => {
-    const lang = window.location.pathname.split("/")[1];
-    if (["fr", "ar"].includes(lang)) {
-      setCurrentLang(lang);
-    } else {
-      setCurrentLang("en");
-    }
-  }, []);
+  const changeLanguage = (newCode: string) => {
+    if (newCode === currentLang) return;
 
-  const changeLanguage = (code: string) => {
     const currentPath = window.location.pathname;
     const pathSegments = currentPath.split("/").filter(Boolean);
     
-    let newPath = "/";
+    // Detect if we are currently in a locale-prefixed path
+    const isCurrentAtSubfolder = ["fr", "ar"].includes(pathSegments[0]);
     
-    // Check if the first segment is a language code
-    const firstSegment = pathSegments[0];
-    const isLangSegment = ["fr", "ar", "en"].includes(firstSegment);
-    
-    if (code === "en") {
-      // If switching to English, remove the language segment if it exists
-      if (isLangSegment) {
+    let newPath = "";
+
+    if (newCode === "en") {
+      // Moving to English (no prefix)
+      if (isCurrentAtSubfolder) {
         newPath = "/" + pathSegments.slice(1).join("/");
       } else {
         newPath = currentPath;
       }
     } else {
-      // If switching to fr/ar
-      if (isLangSegment) {
-        newPath = "/" + code + "/" + pathSegments.slice(1).join("/");
+      // Moving to fr/ar
+      if (isCurrentAtSubfolder) {
+        newPath = "/" + newCode + "/" + pathSegments.slice(1).join("/");
       } else {
-        newPath = "/" + code + currentPath;
+        // We are at root, add the code prefix
+        newPath = "/" + newCode + currentPath;
       }
     }
 
-    // Clean up trailing slash and double slashes
+    // Clean up slashes
     newPath = newPath.replace(/\/+/g, "/");
     if (newPath.length > 1 && newPath.endsWith("/")) {
-        newPath = newPath.slice(0, -1);
+      newPath = newPath.slice(0, -1);
     }
 
-    window.location.href = newPath;
+    window.location.href = newPath || "/";
   };
 
   return (
