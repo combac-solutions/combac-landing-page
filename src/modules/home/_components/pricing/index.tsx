@@ -81,9 +81,11 @@ function Pricing() {
                     />
                   </div>
                   <h4 className="text-2xl font-bold tracking-tight mb-2">{plan.title}</h4>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-3xl font-black">{plan.price}</span>
-                    {plan.price !== "Free"}
+                  <div className="flex items-baseline justify-center gap-1 relative group/price">
+                    <span className="text-3xl font-black blur-[8px] group-hover/price:blur-[2px] transition-all duration-500">{plan.price}</span>
+                    <div className="absolute -top-4 right-1/4 opacity-60">
+                        <span className="text-[10px] font-bold tracking-widest text-primary uppercase italic">Expected</span>
+                    </div>
                   </div>
                 </div>
 

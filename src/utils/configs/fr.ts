@@ -94,11 +94,12 @@ const fr: TemplateConfig = {
       ],
     },
     stats: {
-      title: "Notre communauté en chiffres",
+      title: "Croissance de l'écosystème",
+      subtitle: "Combac étend rapidement son réseau. Rejoignez la phase de pré-lancement et assistez à la naissance d'une économie de récompenses plus intelligente.",
       items: [
         {
-          value: "10K+",
-          label: "Membres actifs",
+          value: "•••",
+          label: "Membres Actifs",
           icon: "./3D/rocket-front-color.webp",
         },
         {
@@ -187,24 +188,29 @@ const fr: TemplateConfig = {
       title: "Foire aux questions",
       qa: [
         {
+          question: "C'est pour quand le lancement ?",
+          answer:
+            "Nous sommes actuellement en phase de bêta privée et préparons un lancement public complet très prochainement. Rejoignez la liste d'attente pour être informé en premier et obtenir un accès anticipé.",
+        },
+        {
           question: "Combac est-il gratuit pour les clients ?",
           answer:
-            "Oui ! Combac est complètement gratuit pour les clients. Téléchargez l'application, créez un compte et commencez à rejoindre des programmes de fidélité dans vos établissements préférés sans frais.",
+            "Oui ! Combac est complètement gratuit pour les clients. Téléchargez l'application dès notre lancement, créez un compte et commencez à rejoindre des programmes de fidélité dans vos établissements préférés sans frais.",
         },
         {
           question: "Comment puis-je gagner des points ?",
           answer:
-            "Après avoir rejoint le programme de fidélité d'un Business dans l'application, scannez simplement le QR code du Business (ou laissez-les scanner le vôtre) au moment du paiement. Les points sont crédités instantanément.",
+            "Après avoir rejoint le programme de fidélité d'un commerce dans l'application, scannez simplement le QR code du commerce (ou laissez-les scanner le vôtre) au moment du paiement. Les points sont crédités instantanément.",
         },
         {
           question: "Comment puis-je échanger mes récompenses ?",
           answer:
-            "Lorsque vous avez accumulé assez de points pour une récompense, appuyez sur 'Échanger' dans l'application depuis la carte de fidélité de ce Business. Montrez l'écran de confirmation au Business et profitez de votre récompense !",
+            "Lorsque vous avez accumulé assez de points pour une récompense, appuyez sur 'Échanger' dans l'application depuis la carte de fidélité de ce commerce. Montrez l'écran de confirmation au commerçant et profitez de votre récompense !",
         },
         {
-          question: "Puis-je utiliser Combac dans n'importe quel Business ?",
+          question: "Puis-je utiliser Combac dans n'importe quel commerce ?",
           answer:
-            "Combac fonctionne dans chaque Business inscrit sur la plateforme. Nous grandissons vite — si votre endroit préféré n'est pas encore sur Combac, vous pouvez les inviter directement depuis l'application.",
+            "Combac fonctionne dans chaque commerce inscrit sur la plateforme. Nous grandissons vite — si votre endroit préféré n'est pas encore sur Combac, vous pouvez les inviter directement depuis l'application.",
         },
         {
           question: "Mes points expirent-ils ?",
@@ -228,7 +234,7 @@ const fr: TemplateConfig = {
         "./screenshots/3.webp",
       ],
       rewards: ["#1 App de Fidélité", "Mieux notée 2025"],
-      usersDescription: "10 000+ membres de fidélité actifs",
+      usersDescription: "••• membres de fidélité actifs",
     },
     pricing: {
       id: "pricing",

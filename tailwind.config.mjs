@@ -13,8 +13,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sketch: ["CabinSketch", ...defaultTheme.fontFamily.mono],
-        sans: ["Rowdies", ...defaultTheme.fontFamily.sans],
+        sketch: ["Outfit", ...defaultTheme.fontFamily.mono],
+        sans: ["Outfit", "Inter", ...defaultTheme.fontFamily.sans],
         greatVibes: ["Great Vibes", ...defaultTheme.fontFamily.serif],
       },
       animation: {

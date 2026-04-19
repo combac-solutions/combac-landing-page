@@ -96,6 +96,7 @@ export type TemplateConfig = {
         stats?: {
             id?: string | undefined;
             title: string;
+            subtitle?: string | undefined;
             items: {
                 value: string;
                 label: string;

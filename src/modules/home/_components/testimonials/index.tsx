@@ -45,20 +45,24 @@ function Testimonials() {
         >
           {testimonials.cards.map(({ name, comment }, index) => (
             <SwiperSlide className="!h-[22rem] my-2" key={index}>
-              <div className="h-full card shadow bg-primary">
-                <div className="p-6 card-body">
+              <div className="h-full card shadow-xl border border-white/10 bg-[#1E293B]/80 backdrop-blur-md group/testi">
+                <div className="p-6 card-body relative">
+                  <div className="absolute top-4 right-6 uppercase text-[8px] font-bold tracking-[0.2em] text-white/20">Beta phase</div>
                   <div className="flex mb-4">
                     {Array(5)
                       .fill(0)
                       .map((_, index) => (
                         <div
                           key={index}
-                          className="h-6 w-6 mask mask-star-2 bg-primary-content"
+                          className="h-4 w-4 mask mask-star-2 bg-primary/40"
                         />
                       ))}
                   </div>
-                  <p className="text-primary-content/90">{comment}</p>
-                  <h2 className="card-title text-primary-content">{name}</h2>
+                  <p className="text-white/70 italic blur-[4px] group-hover/testi:blur-0 transition-all duration-500 leading-relaxed text-sm">"{comment}"</p>
+                  <div className="mt-auto pt-4 border-t border-white/5">
+                    <h2 className="card-title text-white text-base font-bold">{name}</h2>
+                    <p className="text-[10px] text-white/30 uppercase tracking-widest">Early Tester</p>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>
