@@ -1,5 +1,4 @@
 import defaultTheme from "tailwindcss/defaultTheme";
-import config from "./src/utils/config";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -56,7 +55,7 @@ export default {
         },
       },
       "dark",
-      config.theme,
+      "combac",
     ],
   },
 };

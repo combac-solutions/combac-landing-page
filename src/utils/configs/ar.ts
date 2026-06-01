@@ -1,4 +1,6 @@
 import type { TemplateConfig } from "../configType";
+import privacyContent from '../../../PRIVACY_POLICY_AR.md?raw';
+import termsContent from '../../../TERMS_OF_USE_AR.md?raw';
 
 const ar: TemplateConfig = {
   name: "Combac",
@@ -292,14 +294,7 @@ const ar: TemplateConfig = {
       title: "سياسة الخصوصية - كومباك",
       description: "سياسة الخصوصية لـ كومباك",
     },
-    content: `# سياسة الخصوصية
-
-**تاريخ النفاذ:** 1 يناير 2025
-
-## مقدمة
-
-مرحباً بكم في كومباك ("التطبيق"). نحن ملتزمون بحماية خصوصيتك.
-`,
+    content: privacyContent,
   },
   cookiesPolicy: {
     seo: {
@@ -316,10 +311,7 @@ const ar: TemplateConfig = {
       title: "الشروط والأحكام - كومباك",
       description: "الشروط والأحكام لـ كومباك",
     },
-    content: `# الشروط والأحكام
-
-باستخدام تطبيقنا، فإنك توافق على الالتزام بهذه الشروط.
-`,
+    content: termsContent,
   },
 };
 

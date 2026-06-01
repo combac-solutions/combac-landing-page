@@ -1,4 +1,7 @@
 import type { TemplateConfig } from "../configType";
+// Load full legal documents from project root as raw markdown at build time
+import privacyContent from '../../../PRIVACY_POLICY.md?raw';
+import termsContent from '../../../TERMS_OF_USE.md?raw';
 
 const en: TemplateConfig = {
   name: "Combac",
@@ -277,7 +280,7 @@ const en: TemplateConfig = {
       title: "Privacy Policy - Combac",
       description: "Combac Privacy Policy",
     },
-    content: `# Privacy Policy`,
+    content: privacyContent,
   },
   cookiesPolicy: {
     seo: {
@@ -291,7 +294,7 @@ const en: TemplateConfig = {
       title: "Terms and Conditions - Combac",
       description: "Combac Terms and Conditions",
     },
-    content: `# Terms and Conditions`,
+    content: termsContent,
   },
 };
 

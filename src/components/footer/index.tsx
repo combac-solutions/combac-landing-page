@@ -18,7 +18,7 @@ function Footer() {
     return locale && locale !== "en" ? `/${locale}${baseHref}` : baseHref;
   };
 
-  const termsText = locale === "ar" ? "الشروط والأحكام" : locale === "fr" ? "Conditions générales" : "Terms & conditions";
+  const termsText = locale === "ar" ? "شروط الاستخدام" : locale === "fr" ? "Conditions d'utilisation" : "Terms of use";
   const privacyText = locale === "ar" ? "سياسة الخصوصية" : locale === "fr" ? "Politique de confidentialité" : "Privacy policy";
   const cookiesText = locale === "ar" ? "سياسة ملفات تعريف الارتباط" : locale === "fr" ? "Politique relative aux cookies" : "Cookies policy";
 
@@ -101,7 +101,7 @@ function Footer() {
                 }}
                 transition={{ delay: 0.25 }}
                 className="font-bold text-primary hover:text-primary/50 lg:whitespace-nowrap"
-                href={resolveLink("/terms-and-conditions")}
+                href={resolveLink("/terms-of-use")}
               >
                 {termsText}
               </motion.a>

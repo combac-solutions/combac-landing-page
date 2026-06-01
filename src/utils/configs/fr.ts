@@ -1,4 +1,6 @@
 import type { TemplateConfig } from "../configType";
+import privacyContent from '../../../PRIVACY_POLICY_FR.md?raw';
+import termsContent from '../../../TERMS_OF_USE_FR.md?raw';
 
 const fr: TemplateConfig = {
   name: "Combac",
@@ -291,24 +293,7 @@ const fr: TemplateConfig = {
       title: "Politique de confidentialité - Combac",
       description: "Politique de confidentialité de Combac",
     },
-    content: `# Politique de confidentialité
-
-**Date d'entrée en vigueur :** 1er janvier 2025
-
-## Introduction
-
-Bienvenue chez Combac (l'"Application"). Combac ("nous", "notre" ou "nos") s'engage à protéger votre vie privée.
-
-## Informations que nous collectons
-
-### 1. Informations que vous fournissez
-- **Informations de compte :** Nom, adresse e-mail.
-- **Activité de fidélité :** Points gagnés, récompenses échangées.
-
-## Contactez-nous
-
-Si vous avez des questions : privacy@combac.app
-`,
+    content: privacyContent,
   },
   cookiesPolicy: {
     seo: {
@@ -316,8 +301,6 @@ Si vous avez des questions : privacy@combac.app
       description: "Politique relative aux cookies de Combac",
     },
     content: `# Politique relative aux cookies
-
-**Date d'entrée en vigueur :** 1er janvier 2025
 
 Nous utilisons des cookies pour améliorer les performances et mémoriser vos préférences.
 `,
@@ -327,12 +310,7 @@ Nous utilisons des cookies pour améliorer les performances et mémoriser vos pr
       title: "Conditions générales - Combac",
       description: "Conditions générales de Combac",
     },
-    content: `# Conditions générales
-
-**Date d'entrée en vigueur :** 1er janvier 2025
-
-En utilisant notre application, vous acceptez d'être lié par ces conditions.
-`,
+    content: termsContent,
   },
 };
 
