@@ -1,4 +1,6 @@
 import type { TemplateConfig } from "../configType";
+import privacyContent from '../../../PRIVACY_POLICY_AR.md?raw';
+import termsContent from '../../../TERMS_OF_USE_AR.md?raw';
 
 const ar: TemplateConfig = {
   name: "Combac",

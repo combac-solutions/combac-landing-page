@@ -1,4 +1,6 @@
 import type { TemplateConfig } from "../configType";
+import privacyContent from '../../../PRIVACY_POLICY_FR.md?raw';
+import termsContent from '../../../TERMS_OF_USE_FR.md?raw';
 
 const fr: TemplateConfig = {
   name: "Combac",
