@@ -6,7 +6,7 @@ import type { TemplateConfig } from "../../utils/configType";
 import Header from "./_components/header";
 import Features from "./_components/features";
 import AiFeature from "./_components/aiFeature";
-import Stats from "./_components/stats";
+import RealLifeUsage from "./_components/realLifeUsage";
 import Faq from "./_components/faq";
 import HowItWorks from "./_components/howItWorks";
 import Pricing from "./_components/pricing";
@@ -22,7 +22,7 @@ function Home({ config }: Props) {
       <main>
         <Navbar />
         <Header />
-        <Stats />
+        <RealLifeUsage />
         <Features />
         <AiFeature />
         <HowItWorks />

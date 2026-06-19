@@ -16,7 +16,7 @@ const lang = locale || Astro.currentLocale || "en";
     <!-- Global Metadata -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" hreclif={getAssetPath("/combac-logo.png")} />
+    <link rel="icon" type="image/png" href={getAssetPath("/combac-logo.png")} />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Fonts -->
@@ -51,8 +51,10 @@ const lang = locale || Astro.currentLocale || "en";
 
     <script is:inline define:vars={{ forceTheme }}>
       const theme = localStorage.getItem("theme");
-      if (theme === "dark" && !forceTheme)
+      if ((theme === "dark" || !theme) && !forceTheme)
         document.documentElement.setAttribute("data-theme", "dark");
+      else if (theme && !forceTheme)
+        document.documentElement.setAttribute("data-theme", theme);
     </script>
     <script>
       import Lenis from 'lenis'

@@ -9,6 +9,7 @@ import { getAssetPath } from "../../utils/assets";
 function Footer() {
   const {
     locale,
+    logo,
     footer: { links, legalLinks, socials },
   } = useContext(ConfigContext)!;
 
@@ -31,6 +32,9 @@ function Footer() {
         viewport={{ once: true, amount: 0.4 }}
         className="max-w-screen-lg mx-auto mt-12"
       >
+        <div className="mb-8">
+          {logo && <img src={getAssetPath(logo)} alt="Combac Logo" className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" />}
+        </div>
         <nav className="flex flex-col items-start gap-4">
           {links.map(({ title, href }, index) => (
             <motion.a

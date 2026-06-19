@@ -7,11 +7,11 @@ interface Props {
 function IphoneFrame({ src }: Props) {
   return (
     <div className="relative h-full overflow-hidden">
-      <div className="absolute inset-0">
+      <div className="absolute top-[2%] bottom-[2%] left-[4.5%] right-[4.5%]">
         <img
           src={getAssetPath(src)}
           alt="screenshot"
-          className="rounded-[3rem] h-full w-full object-cover"
+          className="rounded-[2rem] h-full w-full object-cover"
         />
       </div>
       <img

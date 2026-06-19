@@ -8,7 +8,7 @@ function ThemeSwitcher() {
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
-    if (theme === "dark") {
+    if (theme === "dark" || !theme) {
       setMode("dark");
       document.documentElement.setAttribute("data-theme", "dark");
     } else {

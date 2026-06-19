@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { easeIn, motion, useScroll, useTransform } from "framer-motion";
 import { useContext, useState } from "react";
 import { ConfigContext } from "../../utils/configContext";
+import { getAssetPath } from "../../utils/assets";
 import ThemeSwitcher from "./themeSwitcher";
 import LanguageSelector from "./languageSelector";
 
@@ -15,6 +16,7 @@ function Navbar() {
     topNavbar,
     googlePlayLink,
     appStoreLink,
+    logo,
   } = useContext(ConfigContext)!;
 
   const resolveLink = (href: string) => {

@@ -36,6 +36,17 @@ function Pricing() {
         >
           {pricing.subtitle}
         </motion.p>
+        {pricing.earlyAdopterNote && (
+          <motion.div
+            initial={{ y: 20, opacity: 0, scale: 0.9 }}
+            whileInView={{ y: 0, opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mt-6 px-6 py-2 rounded-full bg-warning/10 border border-warning/30 text-warning-content font-bold shadow-sm inline-flex"
+          >
+            {pricing.earlyAdopterNote}
+          </motion.div>
+        )}
       </div>
       <motion.div
         initial="hidden"
@@ -66,9 +77,9 @@ function Pricing() {
                   : "border-primary/5 shadow-sm hover:border-primary/20 hover:shadow-lg"
               )}
             >
-              {plan.featured && (
+              {(plan.badge || plan.featured) && (
                 <div className="bg-primary text-primary-content text-[10px] font-bold uppercase tracking-widest py-1.5 text-center absolute top-0 left-0 right-0 z-20">
-                  Most Popular
+                  {plan.badge || "Most Popular"}
                 </div>
               )}
               <div className="card-body p-0 flex flex-col h-full">
@@ -82,10 +93,7 @@ function Pricing() {
                   </div>
                   <h4 className="text-2xl font-bold tracking-tight mb-2">{plan.title}</h4>
                   <div className="flex items-baseline justify-center gap-1 relative group/price">
-                    <span className="text-3xl font-black blur-[8px] group-hover/price:blur-[2px] transition-all duration-500">{plan.price}</span>
-                    <div className="absolute -top-4 right-1/4 opacity-60">
-                        <span className="text-[10px] font-bold tracking-widest text-primary uppercase italic">Expected</span>
-                    </div>
+                    <span className="text-3xl font-black">{plan.price}</span>
                   </div>
                 </div>
 
@@ -105,15 +113,19 @@ function Pricing() {
 
                 {pricing.actionText && (
                   <div className="p-2">
-                    <a
-                      href={getAssetPath("/app")}
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const modal = document.getElementById('pricing_modal') as HTMLDialogElement;
+                        if (modal) modal.showModal();
+                      }}
                       className={clsx(
                         "btn no-animation btn-lg w-full rounded-xl transition-all duration-300",
                         plan.featured ? "btn-primary hover:scale-[1.02] shadow-lg shadow-primary/20" : "btn-outline border-primary/20 hover:bg-primary/5 hover:border-primary"
                       )}
                     >
                       {pricing.actionText}
-                    </a>
+                    </button>
                   </div>
                 )}
               </div>
@@ -121,6 +133,21 @@ function Pricing() {
           </motion.div>
         ))}
       </motion.div>
+
+      <dialog id="pricing_modal" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">{pricing.modalTitle}</h3>
+          <p className="py-4 opacity-80">{pricing.modalDescription}</p>
+          <div className="modal-action">
+            <form method="dialog">
+              <button className="btn btn-outline">{pricing.modalCloseText || "Close"}</button>
+            </form>
+          </div>
+        </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
     </section>
   );
 }

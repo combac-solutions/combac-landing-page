@@ -58,7 +58,7 @@ function Testimonials() {
                         />
                       ))}
                   </div>
-                  <p className="text-white/70 italic blur-[4px] group-hover/testi:blur-0 transition-all duration-500 leading-relaxed text-sm">"{comment}"</p>
+                  <p className="text-white/70 italic transition-all duration-500 leading-relaxed text-sm">"{comment}"</p>
                   <div className="mt-auto pt-4 border-t border-white/5">
                     <h2 className="card-title text-white text-base font-bold">{name}</h2>
                     <p className="text-[10px] text-white/30 uppercase tracking-widest">Early Tester</p>

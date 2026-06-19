@@ -4,14 +4,23 @@ import fr from "./configs/fr";
 import ar from "./configs/ar";
 
 export const getTemplateConfig = (lang: string = "en"): TemplateConfig => {
+  let config: TemplateConfig;
   switch (lang) {
     case "fr":
-      return { ...fr, locale: "fr" };
+      config = { ...fr, locale: "fr" };
+      break;
     case "ar":
-      return { ...ar, locale: "ar" };
+      config = { ...ar, locale: "ar" };
+      break;
     default:
-      return { ...en, locale: "en" };
+      config = { ...en, locale: "en" };
+      break;
   }
+
+  config.appStoreLink = import.meta.env.PUBLIC_APP_STORE_URL;
+  config.googlePlayLink = import.meta.env.PUBLIC_GOOGLE_PLAY_URL;
+
+  return config;
 };
 
 const defaultTemplateConfig = en;
