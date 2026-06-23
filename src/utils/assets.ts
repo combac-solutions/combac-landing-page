@@ -1,9 +1,8 @@
-export const getAssetPath = (path: string) => {
-  if (!path || path.startsWith("http") || path.startsWith("#") || path.startsWith("mailto:") || path.startsWith("tel:")) return path;
+export const getAssetPath = (path: string | undefined) => {
+  if (!path || path.startsWith("http") || path.startsWith("#") || path.startsWith("mailto:") || path.startsWith("tel:")) return path || "";
   
-  // Remove leading dots and slashes
-  const cleanPath = path.replace(/^\.?\//, "");
+  // Ensure it starts with a leading slash to be root-relative
+  const cleanPath = path.replace(/^\.?\/?/, "/");
   
-  // Return as relative path (no leading slash)
   return cleanPath;
 };
