@@ -10,6 +10,8 @@ function Footer() {
   const {
     locale,
     logo,
+    googlePlayLink,
+    appStoreLink,
     footer: { links, legalLinks, socials },
   } = useContext(ConfigContext)!;
 
@@ -52,49 +54,71 @@ function Footer() {
           ))}
         </nav>
         <aside className="flex flex-col items-center justify-between mt-4 w-full overflow-hidden md:flex-row lg:overflow-visible">
-          <div className="flex items-center gap-3 w-full text-primary">
-            {socials?.facebook && (
-              <motion.a
-                variants={{
-                  hidden: { opacity: 0, x: "-100%" },
-                  visible: { opacity: 1, x: 0 },
-                }}
-                transition={{ delay: 0.25 }}
-                className="w-8 h-8 hover:text-primary/50"
-                target="_blank"
-                href={socials.facebook}
-              >
-                <FacebookLogo />
-              </motion.a>
-            )}
-            {socials?.instagram && (
-              <motion.a
-                variants={{
-                  hidden: { opacity: 0, x: "-100%" },
-                  visible: { opacity: 1, x: 0 },
-                }}
-                transition={{ delay: 0.5 }}
-                className="w-8 h-8 hover:text-primary/50"
-                target="_blank"
-                href={socials.instagram}
-              >
-                <InstagramLogo />
-              </motion.a>
-            )}
-            {socials?.twitter && (
-              <motion.a
-                variants={{
-                  hidden: { opacity: 0, x: "-100%" },
-                  visible: { opacity: 1, x: 0 },
-                }}
-                transition={{ delay: 0.75 }}
-                className="w-8 h-8 hover:text-primary/50"
-                target="_blank"
-                href={socials.twitter}
-              >
-                <TwitterLogo />
-              </motion.a>
-            )}
+          <div className="flex flex-col gap-4 mt-8 mb-4 md:m-0">
+            <div className="flex items-center gap-3 text-primary">
+              {socials?.facebook && (
+                <motion.a
+                  variants={{
+                    hidden: { opacity: 0, x: "-100%" },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ delay: 0.25 }}
+                  className="w-8 h-8 hover:text-primary/50"
+                  target="_blank"
+                  href={socials.facebook}
+                >
+                  <FacebookLogo />
+                </motion.a>
+              )}
+              {socials?.instagram && (
+                <motion.a
+                  variants={{
+                    hidden: { opacity: 0, x: "-100%" },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ delay: 0.5 }}
+                  className="w-8 h-8 hover:text-primary/50"
+                  target="_blank"
+                  href={socials.instagram}
+                >
+                  <InstagramLogo />
+                </motion.a>
+              )}
+              {socials?.twitter && (
+                <motion.a
+                  variants={{
+                    hidden: { opacity: 0, x: "-100%" },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ delay: 0.75 }}
+                  className="w-8 h-8 hover:text-primary/50"
+                  target="_blank"
+                  href={socials.twitter}
+                >
+                  <TwitterLogo />
+                </motion.a>
+              )}
+            </div>
+            <div className="flex gap-4">
+              {googlePlayLink && (
+                <a href={googlePlayLink} className="transition-transform hover:scale-105 active:scale-95">
+                  <img
+                    className="h-10"
+                    alt="google play logo"
+                    src={getAssetPath("/stores/google-play.svg")}
+                  />
+                </a>
+              )}
+              {appStoreLink && (
+                <a href={appStoreLink} className="transition-transform hover:scale-105 active:scale-95">
+                  <img
+                    className="h-10"
+                    alt="app store logo"
+                    src={getAssetPath("/stores/app-store.svg")}
+                  />
+                </a>
+              )}
+            </div>
           </div>
           <div className="flex gap-4 mt-8 mb-4 md:m-0">
             {legalLinks.termsAndConditions && (
