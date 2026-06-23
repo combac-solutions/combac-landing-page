@@ -253,7 +253,7 @@ const en: TemplateConfig = {
         },
         {
           title: "Standard Business",
-          price: "39 DT/month",
+          price: "59 DT/month",
           rows: [
             "Starts after 2-month trial",
             "Custom branding & Campaigns",

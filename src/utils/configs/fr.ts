@@ -252,7 +252,7 @@ const fr: TemplateConfig = {
         },
         {
           title: "Business Standard",
-          price: "39 DT/mois",
+          price: "59 DT/mois",
           rows: [
             "Commence après l'essai de 2 mois",
             "Branding & Campagnes personnalisées",
