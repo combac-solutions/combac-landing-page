@@ -1,0 +1,14 @@
+services:
+  landing-page:
+    build: 
+      context: .
+      args:
+        - PUBLIC_APP_STORE_URL=${PUBLIC_APP_STORE_URL}
+        - PUBLIC_GOOGLE_PLAY_URL=${PUBLIC_GOOGLE_PLAY_URL}
+    ports:
+      - "8080:80"
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - .:/app
